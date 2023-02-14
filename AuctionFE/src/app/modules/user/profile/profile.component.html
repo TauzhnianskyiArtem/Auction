@@ -1,0 +1,115 @@
+<div class="body">
+  <div id="mainContent" role="main" tabindex="-1">
+    <h1 class="title"> Welcome, {{user?.firstName}} {{user?.lastName}}! </h1>
+    <div class="top-nav">
+      <div class="top-nav-container">
+        <div class="tabs-container">
+          <div class="top-nav--tab">
+            <div class="tab--content">
+              <span class="top-nav--links">Account</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="individual_section">
+          <h1 id="individual_personal_info_label" class="title" role="main">Personal info</h1>
+          <div class="separator"></div>
+          <div>
+            <div>
+              <div class="individual_block">
+                <div class="label">
+                  <span>Username</span>
+                </div>
+                <div class="contentbox">
+                  <div class="individual_details">
+                    <div>
+                      <div>
+                        <div id="display_username">{{user?.username}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+              <div class="individual_block">
+                <div class="label">
+                  <span>Account type</span>
+                </div>
+                <div class="contentbox">
+                  <div class="individual_details">
+                    <div>
+                      <div>
+                        <div id="display_account_type">{{user?.type}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="separator"></div>
+            <div>
+              <div class="individual_block">
+                <div class="label">
+                  <span>Contact details</span>
+                </div>
+                <div class="individual__contentbox">
+                  <div class="individual__details-sub">
+                    <div class="flexBox">
+                      <div>
+                        <div id="contact_info_label" class="contactInfoDisplay_label">Email address</div>
+                        <div id="display_email">{{user?.email}}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="separator__sub separator"></div>
+                  <div class="individual__details-sub">
+                    <div class="flexBox">
+                      <div>
+                        <div id="contact_info_label" class="contactInfoDisplay_label">Created date</div>
+                        <div id="display_creation_date">{{user?.creationDate | date:'EEEE, MMMM d, y'}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="separator"></div>
+            <div class="individual_block">
+              <div class="label">
+                <span>Personal info</span>
+              </div>
+              <div class="contentbox">
+                <div class="individual_details">
+                  <div class="flexBox">
+                    <div>
+                      <div id="contact_info_label" class="contactInfoDisplay_label">Owner address</div>
+                      <div class="contactInfoDisplay__content">
+                        <div id="display_address">{{user?.addresses[0]?.city}}</div>
+                        <div id="display_address">{{user?.addresses[0]?.province}}</div>
+                        <div id="display_address">{{user?.addresses[0]?.address}}</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="separator"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <mat-card class="mat-card">
+      <mat-card-content class="mat-card-content">
+        <mat-card-actions class="mat-card-actions">
+          <button type="submit" mat-raised-button color="primary" routerLink="/user/edit/{{user?.id}}">Edit User
+            Details</button>
+          <button type="submit" mat-raised-button color="primary" routerLink="/user/address">Address
+            Details</button>
+        </mat-card-actions>
+      </mat-card-content>
+    </mat-card>

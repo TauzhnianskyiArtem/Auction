@@ -1,0 +1,178 @@
+<body id="mainBody"
+  style="line-height: 1; margin: 0 auto; min-height: 1024px; font-size: 14px; background: #fff !important; color: #333;">
+  <div id="Body" class="sz940 sz1280"
+    style="margin: 0 auto; padding: 0 5px 10px 5px; min-width: 1215px; max-width: 1460px;">
+    <div id="CentralPanelDF" style="font-size: 13px; line-height: 100%;">
+      <div id="CentralPanel" style="clear: both; width: 99.8%; line-height: normal; float: left;">
+        <div id="CentralPanelInternal">
+          <div id="PicturePanel" class="pp-c pic_panel"
+            style="padding: 0 18px 0 0; vertical-align: top; position: relative;">
+            <div class="pp-ic pp-ic500 vi-v-img-pp-ic"
+              style="flex-direction: row; flex-wrap: nowrap; width: 500px; display: flex;">
+              <div class="l-shad lftd img img500"
+                style="border-radius: unset; min-width: 500px; max-height: 500px; border: 1px solid #ececec; position: relative; background: #fff;">
+                <table class="img img500"
+                  style="height: 500px; width: 100%; border-spacing: 0; border-collapse: collapse; display: table; box-sizing: border-box; text-indent: initial;">
+                  <tbody style="display: table-row-group; vertical-align: middle; text-indent: initial;">
+                    <tr style="display: table-row; vertical-align: inherit; text-indent: initial;">
+                      <td class="img img500"
+                        style="height: 500px; text-align: center; vertical-align: middle; display: table-cell;">
+                        <button aria-disabled="false" id="linkMainImg"
+                          style="display: block; cursor: default; text-decoration:  none; letter-spacing: normal;
+                          word-spacing: normal; line-height: normal; text-transform: none; text-indent: 0px;
+                          text-shadow: none; text-align: center; align-items: flex-start; box-sizing: border-box; margin: 0em;"
+                          aria-label="Item Image. Opens image gallery">
+                          <div id="mainImgHldr" class="vi-img-gallery-fixed-height-500 zoom_no"
+                            style="width:500px; background-image:none; height: 500px; position: relative;">
+                            <img id="icImg"
+                              src="{{s3BucketUrl}}{{auction?.id}}"
+                              class="img img500 vi-img-gallery-vertical-allign" itemprop="image" style="max-width: 498px; max-height: 498px; vertical-align: middle; position: absolute;
+                              top: 0; bottom: 0; left: 0; right: 0; margin: auto;">
+                          </div>
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div id="LeftSummaryPanel" class="lsp-c lsp-cRight lsp-cL500 lsp-de vi-v-img-strp500"
+            style="position: relative; margin-left: 564px; margin-right: 300px; min-width: 405px; padding-right: 15px;">
+            <div class="vi-swc-lsp">
+              <div class style>
+                <h1 class="it-ttl" itemprop="name" id="itemTitle"
+                  style="line-height: normal; margin: 0; padding: 0; display: inline; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px;">
+                  <span class="g-hdn">Details about item</span>
+                  {{auction.title}}
+                </h1>
+              </div>
+              <div class="it-rlBr it-rlBr500 vi-title-v-img-srtp"></div>
+              <span id="vi-lkhdr-itmTitl" class="u-dspn">{{auction?.title}}</span>
+            </div>
+            <div id="mainContent" role="main" tabindex="-1" aria-labelledby="itemInfoLabel" class="is"
+              style="overflow:hidden" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+              <h2 id="itemInfoLabel" class="g-hdn">Item information</h2>
+              <form class="displayBlock">
+                <div class="nonActPanel" style="padding: 16px 0 8px 0;">
+                  <div>
+                    <div class="u-flL lable">Condition:</div>
+                    <div class="u-flL condText" id="vi-itm-cond"
+                      style="text-align: left; float: left; color: #333; font-size: small; font-weight: bold; margin: 0; padding: 0; display: block;">
+                      New</div>
+                  </div>
+                  <div class="u-cb spcr a1"></div>
+                  <div class>
+                    <div class="u-flL lable">Time left:</div>
+                    <div class="u-flL">
+                      <span id="bb-tlft">
+                        <span class="vi-tm-left">{{auction?.endDate | date:'EEEE, MMMM d, h:mm:ss a'}}</span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="u-cb spcr"></div>
+                  <div class="u-cb spcr "></div>
+                </div>
+                <div class="c-std watch-redesign vi-ds3cont-box-marpad new-brdr-btns"
+                  style="border-left: 0; border-right: 0; border-bottom: 0; box-shadow: none; background: 0;
+                border-top: 1px solid #e5e5e5; margin-bottom: 0; margin-right: 5px; padding: 0; border: 1px solid #ddd; border-radius: 3px;">
+                  <div class="actPanel vi-noborder vi-no-heart" style="border: 0; padding: 1px 0 0;">
+                    <div class="columncontainer">
+                      <div class="labelvalue-column">
+                        <div class="lbl-value-set">
+                          <div class="vi-compat-hide spcr"></div>
+                          <div class="lbl vi-currentBidAccColorClass"
+                            style="padding-top: 0; flex: 1 1 6%; text-align: left; margin-right: 13px;">Starting Bid:
+                          </div>
+                          <div class="vi-price" itemprop="offers" itemscope="itemscope"
+                            itemtype="https://schema.org/Offer">
+                            <span id="prcIsum_bidPrice" class="notranslate"
+                              style="font-style: normal; font-stretch: normal; line-height: 1.33; letter-spacing: normal;">{{auction?.minimumPrice}}
+                              USD</span>
+                            <div class="rsvnm"
+                              style="margin-bottom: 8px; display: block;font-weight: normal;letter-spacing: normal;">
+                              Available for bidding</div>
+                            <form [formGroup]="biddingForm">
+                              <div class="timeLeft">
+                                <input #biddingPrice id="MaxBidId" placeholder="Bid amount" required type="number"
+                                  formControlName="biddingPrice" class="form-control" size="11" maxlength="11"
+                                  [ngClass]="{ 'is-invalid': submitted && f.biddingPrice.errors }" autocomplete="off" />
+                                <div *ngIf="submitted && f.biddingPrice.errors" class="invalid-feedback">
+                                  <div *ngIf="f.biddingPrice.errors.required">Bidding Price is required</div>
+                                </div><br>
+                              </div>
+                            </form>
+                            <div class="bidAmt"
+                              style="font-size: 14px; font-weight: normal; font-style: normal; font-stretch: normal; line-height: 1.43; letter-spacing: normal;">
+                              Enter {{auction?.minimumPrice + (auction?.minimumPrice * 0.05) }} USD or
+                              more</div>
+                            <div class="vi-eco-fee"></div>
+                          </div>
+                          <div class="spcr"></div>
+                          <div class="sprtr"></div>
+                        </div>
+                      </div>
+                      <div class="vi-bb-small-clpd-btn">
+                        <div></div>
+                        <div></div>
+                        <div class="vi-flex-cta"><button mat-raised-button type="button" class="bidBtn_btn"
+                            (click)="createBidding()">Bidding
+                            Now</button>
+                        </div>
+                        <div class="g-hdn"></div>
+                      </div>
+                      <div class="vi-flex-separator">
+                        <div class="vi-line-separator"></div>
+                        <div class="vi-line-separator"></div>
+                      </div>
+                      <div class="columncontainer">
+                        <div class="labelvalue-column">
+                          <div class="lbl-value-set">
+                            <div class="lbl">Price:</div>
+                            <div class="val">
+                              <div class="mainPrice" style="font-size: 24px; display: flex; flex-direction: column;">
+                                <div id="vi-mskumap-none"><span class="notranslate" id="prcIsum"
+                                    style="text-decoration: none;" itemprop="price">{{auction?.buyNow}} USD</span></div>
+                              </div>
+                              <div class="vi-eco-fee"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="vi-bb-small-clpd-btn">
+                          <div class="vi-flex-cta"><button mat-raised-button type="button" class="bidBtn_btn"
+                              (click)="createPurchasing()">Buy
+                              Now</button></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="vi_zoomEnl_plc_hldr"></div>
+    <div id="BottomPanelDF">
+      <div id="BottomPanel" style="position: relative; clear: both;">
+        <div id="viTabs" class="tab_wp" style="min-width: 441px; clear: both;">
+          <div class="tab g">
+            <a id="viTabs_0" class="item sel" title="Description" idx="0" >
+              <h2>Item Description</h2>
+            </a>
+            <div class="tab_clr"></div>
+          </div>
+          <div id="viTabs_0_cnt" class="content sel">
+            <div id="vi-desc-maincntr">
+              <div id="desc-wrapper-ctr">
+                <div class="u-cb sh-cnt"></div>
+                <div id="desc_div"><span>{{auction.description}}</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

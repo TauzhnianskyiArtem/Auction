@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:postgresql://localhost:5443/auction_db
+    username: admin
+    password: admin
+  jpa:
+    generate-ddl: true
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        hbm2ddl.auto: update
+    open-in-view: false
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 2MB
+      max-request-size: 2MB
+
+app:
+  jwtSecret: nuop
+  jwtExpirationMs: 86400000
+server:
+  port: 8443
+
